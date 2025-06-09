@@ -15,7 +15,8 @@
         <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
     </a>
     <!-- Foto rotonda con tooltip -->
-    <a href="{{ site.baseurl }}/posts/2010-01-01-welcome-to-the-desert-of-the-real.html" class="profile-link">
+     {% assign first_post = site.posts.first %}
+    <a href="{{ first_post.url | prepend: site.baseurl }}" class="profile-link">
         <img src="/assets/images/KeyFeaturesLab logo.png" alt="Who am I?" class="profile-pic" />
         <span class="profile-tooltip">who am I?</span>
     </a>
