@@ -22,8 +22,11 @@ paginate: true
 ## Introduction
 
 As I explored ways to streamline threat intelligence processing in my own work, I developed a project that helped me deeply understand the real-world potential of two powerful Microsoft technologies: **Security Copilot** and **Azure Logic Apps**. Through this project, I experienced firsthand how these tools can work together to automate complex workflows, reduce manual workload, and deliver faster, more reliable security outcomes.
+
 **Microsoft Security Copilot** is an AI-powered assistant that combines the scale of large language models with Microsoft’s security expertise. It helps analysts interpret threat data, contextualize IOCs, and generate incident summaries with speed and precision.
-On the other hand, **Azure Logic Apps** is Microsoft’s low-code automation platform. It allows you to build workflows that react to events, process data, and trigger actions across different systems. When integrated with Security Copilot, Logic Apps can operationalize AI-driven insights automatically parsing threat reports, submitting prompts, and distributing results without human intervention.
+
+On the other hand, **Azure Logic Apps** is Microsoft’s low-code automation platform. It allows users to build workflows that react to events, process data, and trigger actions across different systems. When integrated with Security Copilot, Logic Apps can operationalize AI-driven insights automatically parsing threat reports, submitting prompts, and distributing results without human intervention.
+
 In this blog post, I want to share the project that brought these two technologies together—a solution that helped me go from theory to practical understanding, and that has the potential to save organizations significant time and effort in their security operations.
 
 <img src="/assets/images/SecCopLogicApp/secuirty copilot logo.png" 
@@ -51,6 +54,7 @@ Before diving into the Azure Logic App workflow, it’s important to address a k
 The answer lies in understanding the purpose and strengths of each tool. **Microsoft Security Copilot** is designed to serve as a high-value assistant for security teams, an intelligent system capable of correlating complex signals, identifying patterns, and delivering actionable insights across the full breadth of an organization’s security environment. Its strength is not in handling basic, repetitive parsing tasks, but in providing strategic, contextualized analysis that supports faster, smarter decisions.
 
 On the other hand, extracting raw Indicators of Compromise (IOCs), vulnerabilities, or structured threat data from unstructured, verbose reports is a low-level but necessary task, one that does not leverage the full analytical potential of Security Copilot and may lead to unnecessary compute costs when handled directly by it.
+
 This is where **Azure OpenAI** comes into play. By using a lightweight, general-purpose model such as o4-mini, we can efficiently extract structured threat intelligence data in a cost-effective and scalable way. Once this extraction is complete, **Security Copilot is brought in to do what it does best:** interpret, contextualize, and enrich the extracted data, uncover emerging attack patterns, evaluate relevance based on real-world threat scenarios, and even propose proactive security campaigns that organizations can adopt globally.
 
 In short, this dual-layered approach allows us to:
@@ -95,6 +99,7 @@ Adopting secure key management practices is essential to maintaining the integri
 
 Following variable initialization, the first operational step focuses on extracting text from Threat Intelligence (TI) reports to enable further analysis.
 To analyze these documents effectively, we must first extract their textual content so it can be processed by the Azure OpenAI model to identify Indicators of Compromise (IOCs). In this implementation, all TI reports are stored in PDF format within a OneDrive folder. However, the solution is flexible and can be adapted to work with documents accessed via HTTP links or stored locally.
+
 Using a "For Each" loop, the Logic App iterates over all files in the OneDrive folder. For each file, the workflow:
 1. Validates the file type, ensuring it is in a readable format (e.g., PDF, JPEG, CSV, PNG, TIFF, or Word documents).
 2. Extracts text content using the "Parse a document" action.
@@ -196,6 +201,7 @@ For each response returned by Security Copilot, the output text was appended to 
 ### The final steps 
 
 As the final output of the entire evaluation process, a new file is generated for each analyzed report and stored in OneDrive. Initially, I chose to save these files in plain text (.txt) format for clarity and ease of review. However, this part of the Logic App is highly customizable. Once the final analysis is obtained, the report can be formatted in various ways, including PDF, CSV, or plain text, and stored across multiple destinations such as OneDrive, Google Drive, or even a local directory, depending on operational requirements.
+
 To complete the workflow, the Logic App also sends an email notification to the designated SOC operator (in this case, myself in the demo environment). The email includes both the full report and a direct link to the OneDrive folder containing the newly generated documents, enabling immediate access and further action if needed.
 
 <img src="/assets/images/SecCopLogicApp/thefinalsteps.png" 
@@ -234,7 +240,7 @@ In summary, the workflow demonstrates that it's possible to **achieve meaningful
 ## Cost optimization 
 
 If you're interested in minimizing the cost of Security Copilot prompts, I recommend reading a detailed article by my colleague Stefano Pescosolido, linked in the references section below. His work provides a comprehensive look into best practices for managing SCU (Security Compute Unit) consumption.
-One of the most effective cost-saving techniques involves **explicitly defining the System Capability** to be used within the prompt when calling Security Copilot. By doing so, the model can bypass its internal capability selection process, thereby reducing the computational overhead required to understand and route the request. This direct approach results in a more efficient use of resources.
+One of the most effective cost-saving techniques involves **the explicit invocation of Security Copilot's Direct Skill** to be used within the prompt. By doing so, the model can bypass its internal capability selection process, thereby reducing the computational overhead required to understand and route the request. This direct approach results in a more efficient use of resources.
 
 However, in the context of the Logic App workflow described in this article, I intentionally opted to submit an **open-ended prompt** to Security Copilot. While this may result in slightly higher SCU usage, it consistently produced **more comprehensive and accurate analyses of the extracted content.** Importantly, even with this approach, SCU consumption remained well within reasonable and sustainable limits.
 Ultimately, this trade-off between precision and performance versus strict cost minimization should be evaluated based on your specific operational needs and the complexity of your use case.
