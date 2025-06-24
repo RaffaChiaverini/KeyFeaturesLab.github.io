@@ -22,12 +22,6 @@ Hey there, and welcome to my blog!
 
 I’m super excited to finally launch this space where I’ll be sharing thoughts, insights, hands-on projects, and curious findings from the ever-evolving world of **cybersecurity**. Whether you're an enthusiast, a student, or someone just discovering what happens behind digital defenses — you're in the right place.
 
-### Who am I?
-
-I’m currently a student at **Politecnico di Milano**, where I studied **Computer Engineering** and specialized in **Cybersecurity** during my Master’s degree. But my journey started even earlier — across the ocean — during a summer campus I attended at **UCLA in Los Angeles**. That experience opened my eyes to the vast universe of programming and technology, and I’ve never looked back.
-
-> Since then, it’s been all about understanding how systems work, how they fail, and most importantly — how to secure them.
-
 ### What to expect from this blog?
 
 ![Welcome image](/assets/images/KeyFeaturesLab logo.png "Welcome image")

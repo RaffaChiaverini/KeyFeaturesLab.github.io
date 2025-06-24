@@ -7,13 +7,18 @@ description: Some description.
 permalink: /about/
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Thomas A. Anderson" width="200">
+<img class="img-rounded" src="/assets/images/KeyFeaturesLab logo.png" alt="Raffaele Chiaverini" width="200">
 
 # About
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This blog is a blend of my academic journey, personal projects, and reflections on the cybersecurity landscape. Here’s what you can look forward to:
+* Custom security projects and ideas  
+* Thoughts on emerging technologies  
+* Opinions on security trends and real-world breaches  
+* Stories from my academic path and beyond  
+* Tools, tips, and tutorials for fellow learners  
+
+This blog is not just a collection of notes — it's a **living space** for creativity, exploration, and community.
+
+Let’s build something meaningful — and secure — together.  
+Stay tuned, and welcome once again to the journey! 🚀
