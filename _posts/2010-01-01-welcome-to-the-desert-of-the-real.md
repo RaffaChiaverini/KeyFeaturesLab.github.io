@@ -24,7 +24,10 @@ I’m super excited to finally launch this space where I’ll be sharing thought
 
 ### What to expect from this blog?
 
-![Welcome image](/assets/images/KeyFeaturesLab logo.png "Welcome image")
+<img src="/assets/images/KeyFeaturesLab logo.png" 
+     alt="placeholder" 
+     title="Security Copilot logo" 
+     style="width: 600px;">
 
 This blog is a blend of my academic journey, personal projects, and reflections on the cybersecurity landscape. Here’s what you can look forward to:
 * Custom security projects and ideas  

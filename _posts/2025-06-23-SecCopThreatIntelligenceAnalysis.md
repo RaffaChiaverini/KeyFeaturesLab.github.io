@@ -2,7 +2,7 @@
 date: 2025-06-23 02:30:00
 layout: post
 title: Automating Threat Intelligence with Azure OpenAI & Security Copilot 
-subtitle: 'By Raffaele Chiaverini'
+subtitle: 'By KeyFeaturesLab'
 description: >-
     A hands-on walkthrough of how to automate threat intelligence extraction and analysis using Azure OpenAI, Microsoft Security Copilot, and Logic Apps—designed to save time, reduce costs, and operationalize security insights.
 image: /assets/images/SecCopLogicApp/202AI-PoweredCybersecurityWorkflow_simple_compose.png
