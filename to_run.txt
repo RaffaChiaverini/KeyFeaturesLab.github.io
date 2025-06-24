@@ -1,0 +1,6 @@
+https://{IOC-Extraction}.openai.azure.com/openai/deployments/{o4-mini}/completions?api-version={2022-12-01}
+
+Set-Location "C:\Users\t-raffaelec\OneDrive - Microsoft\Not Useful\Documents\GitHub\KeyFeaturesLab"
+bundle install
+bundle exec jekyll serve
+http://127.0.0.1:4000/

@@ -17,6 +17,7 @@ tags:
 author: Raffaele Chiaverini
 paginate: true
 ---
+<!--page-->
 Hey there, and welcome to my blog!
 
 I’m super excited to finally launch this space where I’ll be sharing thoughts, insights, hands-on projects, and curious findings from the ever-evolving world of **cybersecurity**. Whether you're an enthusiast, a student, or someone just discovering what happens behind digital defenses — you're in the right place.
@@ -42,3 +43,4 @@ This blog is not just a collection of notes — it's a **living space** for crea
 
 Let’s build something meaningful — and secure — together.  
 Stay tuned, and welcome once again to the journey! 🚀
+<!--page-->
