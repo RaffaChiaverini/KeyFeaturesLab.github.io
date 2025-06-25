@@ -122,11 +122,11 @@ For this implementation, I used the o4-mini model deployed via Azure OpenAI, as 
      title="Where to find the maximum numvber of tokens supported by the OpenAI model" 
      style="width: 1000px;">
 
-After the text has been successfully segmented, each chunk is processed by the OpenAI model through an HTTP POST request. To perform this step, I followed a guide by Antonio Formato (referenced below), which outlines how to interact with Azure OpenAI deployments over HTTP. 
+After the text has been successfully segmented, each chunk is processed by the OpenAI model through an HTTP POST request. To perform this step, I followed a guide by Antonio Formato (follow this <a href="https://medium.com/@antonio.formato/consume-azure-openai-api-within-microsoft-azure-logic-apps-ed1258219684" style="color: rgb(116, 191, 241);">LINK</a> if you're interested), which outlines how to interact with Azure OpenAI deployments over HTTP. 
 
 <img src="/assets/images/SecCopLogicApp/HTTPCall.png" 
      alt="placeholder" 
-     title="Where to find the maximum numvber of tokens supported by the OpenAI model" 
+     title="Azure OpenAI HTTP call" 
      style="width: 1000px;">
 
 The base URI used for this call follows a consistent structure, with three customizable components based on your specific configuration:
@@ -239,7 +239,7 @@ In summary, the workflow demonstrates that it's possible to **achieve meaningful
 
 ## Cost optimization 
 
-If you're interested in minimizing the cost of Security Copilot prompts, I recommend reading a detailed article by my colleague Stefano Pescosolido, linked in the references section below. His work provides a comprehensive look into best practices for managing SCU (Security Compute Unit) consumption.
+If you're interested in minimizing the cost of Security Copilot prompts, I recommend reading a detailed article by my colleague Stefano Pescosolido, that you can fine at the following <a href="https://www.linkedin.com/pulse/impact-direct-skill-invocation-automations-stefano-pescosolido-o3yef/?trackingId=0WKGLbETqJjlIgMdYoHnBg%3D%3D" style="color: rgb(116, 191, 241);">LINK</a>. His work provides a comprehensive look into best practices for managing SCU (Security Compute Unit) consumption.
 One of the most effective cost-saving techniques involves **the explicit invocation of Security Copilot's Direct Skill** to be used within the prompt. By doing so, the model can bypass its internal capability selection process, thereby reducing the computational overhead required to understand and route the request. This direct approach results in a more efficient use of resources.
 
 However, in the context of the Logic App workflow described in this article, I intentionally opted to submit an **open-ended prompt** to Security Copilot. While this may result in slightly higher SCU usage, it consistently produced **more comprehensive and accurate analyses of the extracted content.** Importantly, even with this approach, SCU consumption remained well within reasonable and sustainable limits.
